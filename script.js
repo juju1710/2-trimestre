@@ -1,43 +1,73 @@
-const caixaPrincipal=document.querySelector(".caixa-principal);
+const caixaPrincipal=document.querySelector(".caixa-principal");
 const caixaPerguntas=document.querySelector(".caixa-perguntas");
 const caixaAlternativas=document.querySelector(".caixa-alternativas");
 const caixaResultado=document.querySelector(".caixa-resultado");
-const textoResultado=document.querySelector(".texto-resultado);
+const textoResultado=document.querySelector(".texto-resultado");
 
 const perguntas=[
   {
     enunciado: "Pergunta 1",
     alternativas:[
-      "Alternativa 1"
-      "Alternativa 2"
+      {
+      texto: "Alternativa 1",
+    afiremação: "afiremação",
+      },
+      {
+      texto: "Alternativa 2",
+      afiremação: "afiremação",
+      },
     ]
   },
   {
     enunciado: "Pergunta 1",
     alternativas:[
-      "Alternativa 1"
-      "Alternativa 2"
+      {
+      texto: "Alternativa 1",
+      afiremação: "afiremação",
+      },
+      {
+      texto: "Alternativa 2",
+      afiremação: "afiremação",
+      },
     ]
   },
   {
     enunciado: "Pergunta 1",
     alternativas:[
-      "Alternativa 1"
-      "Alternativa 2"
+      {
+      texto: "Alternativa 1",
+      afiremação: "afiremação",
+      },
+      {
+      texto: "Alternativa 2",
+      afiremação: "afiremação"
+      },
     ]
   },
   {
     enunciado: "Pergunta 1",
     alternativas:[
-      "Alternativa 1"
-      "Alternativa 2"
+      {
+      texto: "Alternativa 1",
+      afiremação: "afiremação",
+    },
+    {
+      texto: "Alternativa 2",
+      afiremação: "afiremação"
+    },
     ]
   },
   {
     enunciado: "Pergunta 1",
     alternativas:[
-      "Alternativa 1"
-      "alternativa 2"
+      {
+      texto: "Alternativa 1",
+      afiremação: "afiremação",
+      },
+      {
+      texto: "alternativa 2",
+      afiremação: "afiremação",
+      },
      ]
   },
 ];
