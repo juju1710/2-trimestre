@@ -6,67 +6,67 @@ const textoResultado=document.querySelector(".texto-resultado");
 
 const perguntas=[
   {
-    enunciado: "Pergunta 1",
+    enunciado: "você gosta de lazanha ?",
     alternativas:[
       {
-      texto: "Alternativa 1",
-    afiremação: "afiremação",
+      texto: "Sim",
+    afiremação: "porque é minha comida preferida",
       },
       {
-      texto: "Alternativa 2",
-      afiremação: "afiremação",
+      texto: "não",
+      afiremação: "porque a textura não é boa",
+      },
+    ]
+  }, 
+  {
+    enunciado: "o jack é branco ou roxo ?",
+    alternativas:[
+      {
+      texto: "roxo",
+      afiremação: "porque eu assisti na pirataria",
+      },
+      {
+      texto: "branco",
+      afiremação: "correto,ele é branco",
       },
     ]
   },
   {
-    enunciado: "Pergunta 1",
+    enunciado: "você fala varias linguas ?",
     alternativas:[
       {
-      texto: "Alternativa 1",
-      afiremação: "afiremação",
+      texto: "sim",
+      afiremação: "fala 3 linguas diferentes",
       },
       {
-      texto: "Alternativa 2",
-      afiremação: "afiremação",
+      texto: "não",
+      afiremação: "não sei nem falar português direito"
       },
     ]
   },
   {
-    enunciado: "Pergunta 1",
+    enunciado: "você acha que as ginastas arrasaram na olimpíada ?",
     alternativas:[
       {
-      texto: "Alternativa 1",
-      afiremação: "afiremação",
-      },
-      {
-      texto: "Alternativa 2",
-      afiremação: "afiremação"
-      },
-    ]
-  },
-  {
-    enunciado: "Pergunta 1",
-    alternativas:[
-      {
-      texto: "Alternativa 1",
-      afiremação: "afiremação",
+      texto: "sim",
+      afiremação: "a pontuação delas foram incrível",
     },
     {
-      texto: "Alternativa 2",
-      afiremação: "afiremação"
+      texto: "não",
+      afiremação: "acho que elas poderiam ter melhorado em varios movimentos "
     },
     ]
   },
   {
-    enunciado: "Pergunta 1",
+    enunciado: "você colocava os seus dentes embaixo do travisseiro para a fada do dente ?",
     alternativas:[
       {
-      texto: "Alternativa 1",
-      afiremação: "afiremação",
+      texto: "sim",
+      afiremação: "sempre ganhava um troquinho da fada do dente",
       },
       {
-      texto: "alternativa 2",
-      afiremação: "afiremação",
+      texto: "não",
+      afiremação: "minha mãe falou que ela nunca existiu era apenas uma história ",
       },
      ]
   },
@@ -77,11 +77,15 @@ let perguntasAtual;
 let historiaFinal " ";
 
 function mostraPergunta (){
+  if(atual >= perguntas.lenghth){
+    mostraResultado();
+    return;
+  }
   perguntaAtual=perguntas [atual];
   caixaPerguntas.textContent=perguntaAtual.enunciado;
+  caixaAlternativas.textContent = "";
   mostraAltenativas ();
 }
-
 function mostraAltenativas(){
    for(const alternativa of perguntasAtual.alternativa){
    const botaoAlternativas = document.createElement("button");
@@ -91,12 +95,17 @@ function mostraAltenativas(){
    }
 }
 
-
-
-
 function respostaSelecionada(opcaoSelecionada){
   const afiremacoes= opcaoSelecionada.afiremacoes;
-  historiaFinal= afiremacoes;
+  historiaFinal += afiremacoes + " ";
   atual++;
+  mostraPergunta();
 }
-mostraPergunta();
+
+function mostraResultado(){
+  caixaPerguntas.textContent = "você chegou até o final , parabéns"
+  textoResultado.textContent = historiaFinal;
+  caixaAlternativas.textContent = " ";
+}
+
+mostraPergunta
